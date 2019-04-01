@@ -31,3 +31,6 @@ docker-compose run web rake db:create
 ```
 docker-compose up -d
 ```
+
+6. a. If on chrome: [http://rails-girls.localhost/](http://rails-girls.localhost/)
+   b. If on another browser: [http://localhost/](http://localhost/)
