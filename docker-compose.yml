@@ -1,0 +1,23 @@
+version: '3'
+services:
+  database:
+    container_name: database
+    image: postgres:alpine
+    volumes:
+      - database:/var/lib/postgresql/data
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./src:/data/rails-girls
+      - ./src/Gemfile.lock:/data/rails-girls/Gemfile.lock:rw
+    ports:
+      - "80:3000"
+    depends_on:
+      - database
+
+volumes:
+  database:
