@@ -32,6 +32,6 @@ docker-compose run web rake db:create
 docker-compose up -d
 ```
 
-6. You should now be able to browse your rails application
+6. You should now be able to browse your rails application  
   a. if you are on Chrome: [http://rails-girls.localhost/](http://rails-girls.localhost/)  
   b. if you are on another browser: [http://localhost/](http://localhost/)
