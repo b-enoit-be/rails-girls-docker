@@ -6,18 +6,10 @@
 docker-compose run web rails new . --force --no-deps --database=postgresql
 ```
 
-2. Rebuild the applciation (redo this each time you change Gemfile dependencies)
+2. Rebuild the application (redo this each time you change any ```Gemfile``` dependencies)
 
 ```
 docker-compose build
-```
-
-3. Connect to the postgress database container; in the extising ```default``` node of the file ```src/config/database.yml```, add
-
-```
-  host: database
-  username: postgres
-  password:
 ```
 
 4. Create the database
