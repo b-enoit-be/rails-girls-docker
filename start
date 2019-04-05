@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-docker-compose run web rails new . --force --no-deps --database=postgresql && \
+docker-compose run web rails new . --force --no-deps --database=postgresql --skip-bundle && \
 docker-compose build && \
-docker-compose run web rake db:create && \
+docker-compose run web rake db:create
 docker-compose up -d && \
 docker-compose logs -f
