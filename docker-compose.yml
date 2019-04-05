@@ -16,11 +16,9 @@ services:
       dockerfile: ./docker/Dockerfile
     command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
-      DATABASE_URL: postgresql://postgres:@database/rails-girls_development?pool=5
-      RAILS_ENV: development
+      DATABASE_URL: postgresql://postgres:@database
     volumes:
       - ./src:/data/rails-girls
-      - ./src/Gemfile.lock:/data/rails-girls/Gemfile.lock:rw
     ports:
       - "80:3000"
     depends_on:

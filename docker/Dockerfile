@@ -4,13 +4,13 @@ COPY docker/bin/entrypoint.sh /usr/bin/
 
 RUN chmod +x /usr/bin/entrypoint.sh && \
     apk --no-cache add \
-    build-base \
-    libxml2-dev \
-    libxslt-dev \
-	nodejs \
-	postgresql-client \
-	postgresql-dev \
-	tzdata && \
+      build-base \
+      libxml2-dev \
+      libxslt-dev \
+	    nodejs \
+	    postgresql-client \
+	    postgresql-dev \
+	    tzdata && \
     mkdir -p /data/rails-girls
 
 WORKDIR /data/rails-girls
