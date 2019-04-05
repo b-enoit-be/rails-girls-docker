@@ -16,8 +16,7 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 WORKDIR /data/rails-girls
 USER guest
 
-COPY src/Gemfile /data/rails-girls/Gemfile
-COPY --chown=guest:nogroup src/Gemfile.lock /data/rails-girls/Gemfile.lock
+COPY --chown=guest:nogroup src/Gemfile* /data/rails-girls/
 
 RUN bundle install
 
