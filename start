@@ -3,4 +3,5 @@ docker-compose run web rails new . --force --no-deps --database=postgresql --ski
 docker-compose build && \
 docker-compose run web rake db:create
 docker-compose up -d && \
+open http://rails-girls.localhost/ && \
 docker-compose logs -f
