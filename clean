@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+docker-compose down
 docker system prune --all --volumes --force
 git clean -fxd
 git checkout .
