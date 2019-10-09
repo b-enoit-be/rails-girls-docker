@@ -12,9 +12,9 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
       nodejs \
       postgresql-client \
       postgresql-dev \
-      tzdata && \
+      tzdata \
+      yarn && \
     mkdir -p /data/rails-girls && \
-    bundle config --local disable_platform_warnings true && \
     gem install rails && \
     chown -R guest:nogroup /data/rails-girls /usr/local/bundle
 
