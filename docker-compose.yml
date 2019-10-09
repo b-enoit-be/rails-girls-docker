@@ -1,8 +1,6 @@
 version: '3'
 services:
 
-# @todo add yarn assets https://nithinbekal.com/posts/yarn-rails/
-
   database:
     container_name: database
     image: postgres:alpine
