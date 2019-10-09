@@ -1,6 +1,6 @@
 FROM ruby:2-alpine
 
-ENV HOME /usr/local/bundle
+ENV HOME /data/rails-girls
 
 COPY docker/bin/entrypoint.sh /usr/bin/
 
