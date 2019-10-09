@@ -18,7 +18,6 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
     gem install rails && \
     chown -R guest:nogroup /data/rails-girls /usr/local/bundle
 
-
 USER guest
 
 WORKDIR /data/rails-girls
