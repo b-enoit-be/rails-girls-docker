@@ -14,9 +14,10 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
       postgresql-dev \
       tzdata && \
     mkdir -p /data/rails-girls && \
-    chown -R guest:nogroup /data/rails-girls /usr/local/bundle && \
     bundle config --local disable_platform_warnings true && \
-    gem install rails
+    gem install rails && \
+    chown -R guest:nogroup /data/rails-girls /usr/local/bundle
+
 
 USER guest
 
