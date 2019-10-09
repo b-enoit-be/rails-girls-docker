@@ -11,14 +11,12 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 	    postgresql-client \
 	    postgresql-dev \
 	    tzdata && \
-    mkdir -p /data/rails-girls && \
-    chown guest:nogroup /data/rails-girls && \
+    mkdir -p /data/rails-girls /usr/local/bundle/cache && \
+    chown guest:nogroup /data/rails-girls /usr/local/bundle/cache && \
     gem install rails
 
 WORKDIR /data/rails-girls
 USER guest
-
-ENV HOME /data/rails-girls
 
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
