@@ -12,18 +12,13 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 	    postgresql-dev \
 	    tzdata && \
     mkdir -p /data/rails-girls && \
-    chown guest:nogroup /data/rails-girls
+    chown guest:nogroup /data/rails-girls && \
+    gem install rails --include-dependencies
 
 WORKDIR /data/rails-girls
 USER guest
 
 ENV HOME /data/rails-girls
-
-COPY --chown=guest:nogroup src/Gemfile* /data/rails-girls/
-
-RUN bundle install
-
-COPY src /data/rails-girls
 
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
