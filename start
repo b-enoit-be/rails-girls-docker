@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 docker-compose up -d
-until curl localhost 
+until curl -s localhost 
 do
-  sleep 1
+  sleep 10
 done
 open http://rails-girls.localhost/
 docker-compose logs -f
