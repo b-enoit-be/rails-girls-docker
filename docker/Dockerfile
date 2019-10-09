@@ -13,7 +13,7 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 	    tzdata && \
     mkdir -p /data/rails-girls && \
     chown guest:nogroup /data/rails-girls && \
-    gem install rails --include-dependencies
+    gem install rails
 
 WORKDIR /data/rails-girls
 USER guest
