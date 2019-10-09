@@ -11,7 +11,8 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 	    postgresql-client \
 	    postgresql-dev \
 	    tzdata && \
-    mkdir -p /data/rails-girls
+    mkdir -p /data/rails-girls && \
+    chown guest:nogroup /data/rails-girls
 
 WORKDIR /data/rails-girls
 USER guest
