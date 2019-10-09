@@ -7,18 +7,18 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
       build-base \
       libxml2-dev \
       libxslt-dev \
-	    nodejs \
-	    postgresql-client \
-	    postgresql-dev \
-	    tzdata
+      nodejs \
+      postgresql-client \
+      postgresql-dev \
+      tzdata && \
+    mkdir -p /data/rails-girls && \
+    chown guest:nogroup /data/rails-girls	    
 
 USER guest
 
 ENV HOME /usr/local/bundle 
 
-RUN mkdir -p /data/rails-girls && \
-    chown guest:nogroup /data/rails-girls /usr/local/bundle && \
-    bundle config --local disable_platform_warnings true && \
+RUN bundle config --local disable_platform_warnings true && \
     gem install rails
     
 WORKDIR /data/rails-girls    
