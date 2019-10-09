@@ -10,15 +10,18 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
 	    nodejs \
 	    postgresql-client \
 	    postgresql-dev \
-	    tzdata && \
-    mkdir -p /data/rails-girls /usr/local/bundle && \
-    chown guest:nogroup /data/rails-girls /usr/local/bundle && \
-    gem install rails
+	    tzdata
 
-WORKDIR /data/rails-girls
 USER guest
 
-ENV HOME /data/rails-girls
+ENV HOME /usr/local/bundle 
+
+RUN mkdir -p /data/rails-girls && \
+    chown guest:nogroup /data/rails-girls /usr/local/bundle && \
+    bundle config --local disable_platform_warnings true && \
+    gem install rails
+    
+WORKDIR /data/rails-girls    
 
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
