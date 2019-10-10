@@ -9,6 +9,7 @@ services:
       POSTGRES_PASSWORD: ThisIsANotSoSecretPassword
     volumes:
       - database:/var/lib/postgresql/data
+      - local_bundle:/usr/local/bundle
 
   web:
     container_name: web
@@ -26,3 +27,4 @@ services:
 
 volumes:
   database:
+  local_bundle:
