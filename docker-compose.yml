@@ -9,8 +9,7 @@ services:
       POSTGRES_PASSWORD: ThisIsANotSoSecretPassword
     volumes:
       - database:/var/lib/postgresql/data
-      - local_bundle:/usr/local/bundle
-
+      
   web:
     container_name: web
     build:
@@ -20,6 +19,7 @@ services:
       DATABASE_URL: postgres://railsGirls:ThisIsANotSoSecretPassword@database/rails_girls_development?pool=5
     volumes:
       - ./src:/data/rails-girls
+      - local_bundle:/usr/local/bundle
     ports:
       - "80:3000"
     depends_on:
