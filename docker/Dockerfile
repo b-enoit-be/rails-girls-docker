@@ -15,7 +15,6 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
       tzdata \
       yarn && \
     mkdir -p /data/rails-girls && \
-    gem install rails && \
     chown -R guest:nogroup /data/rails-girls /usr/local/bundle
 
 USER guest
