@@ -15,8 +15,9 @@ RUN chmod +x /usr/bin/entrypoint.sh && \
       tzdata \
       yarn && \
     mkdir -p /data/rails-girls && \
-    chown -R guest:nogroup /data/rails-girls /usr/local/bundle
+    chown -R guest:nogroup /data/rails-girls
 
+VOLUME /usr/local/bundle
 USER guest
 
 WORKDIR /data/rails-girls
